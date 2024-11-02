@@ -4,9 +4,10 @@ import { useQuery } from "@tanstack/react-query";
 import getPastOrders from "../api/getPastOrders";
 import getPastOrder from "../api/getPastOrder";
 import Modal from "../Modal";
+import ErrorBoundary from "../ErrorBoundary";
 
 export const Route = createLazyFileRoute("/past")({
-  component: PastOrdersRoute,
+  component: ErrorBoundaryWrappedPastOrderRoutes,
 });
 
 const intl = new Intl.NumberFormat("en-US", {
@@ -29,6 +30,8 @@ function PastOrdersRoute() {
       enabled: !!focusedOrder,
       staleTime: 24 * 60 * 60 * 1000, // one day in milliseconds,
   });
+
+  //throw new Error("testing");
 
   if (isLoading) {
     return (
@@ -107,5 +110,13 @@ function PastOrdersRoute() {
         </Modal>
       ) : null}
     </div>
+  );
+}
+
+function ErrorBoundaryWrappedPastOrderRoutes() {
+  return (
+    <ErrorBoundary>
+      <PastOrdersRoute />
+    </ErrorBoundary>
   );
 }
