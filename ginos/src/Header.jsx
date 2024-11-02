@@ -6,12 +6,15 @@ export default function Header() {
     const [cart] = useContext(CartContext);
     return (
       <nav>
-        <Link to="/">
-          <h1 className="logo">Padre Gino's Pizza</h1>
-        </Link>
-        <div className="nav-cart">
-          🛒<span className="nav-cart-number">{cart.length}</span>
-        </div>
+         <Link to="/">
+            <h1 className="logo">Padre Gino's Pizza</h1>
+          </Link>
+          <div className="nav-cart">
+            <Link to="/order">
+            🛒<span className="nav-cart-number">{cart.length}</span>
+            </Link>
+          </div>
+     
       </nav>
     );
   }
