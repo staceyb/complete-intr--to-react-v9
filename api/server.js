@@ -286,6 +286,7 @@ server.post("/api/contact", async function contactForm(req, res) {
 
   if (!name || !email || !message) {
     res.status(400).send({ error: "All fields are required" });
+    req.log.info(`Not all required fields were sent`);
     return;
   }
 

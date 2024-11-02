@@ -384,6 +384,16 @@ tbody tr:last-of-type {
   font-size: 20px;
 }
 
+.hidden {
+  display: none;
+}
+
+.formerror {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+}
+
 #modal {
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
