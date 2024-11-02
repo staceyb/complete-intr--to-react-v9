@@ -9,7 +9,6 @@ export default [
   js.configs.recommended,
   {
     ...reactPlugin.configs.flat.recommended,
-    ...pluginQuery.configs["flat/recommended"],
     settings: {
       react: {
         version: "detect",
@@ -17,6 +16,7 @@ export default [
     },
   },
   reactPlugin.configs.flat["jsx-runtime"],
+  ...pluginQuery.configs["flat/recommended"],
   {
     files: ["**/*.js", "**/*.jsx"],
     languageOptions: {
