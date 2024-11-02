@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useDebugValue } from "react";
 
 export const usePizzaOfTheDay = () => {
@@ -18,4 +17,3 @@ export const usePizzaOfTheDay = () => {
 
   return pizzaOfTheDay;
 };
-

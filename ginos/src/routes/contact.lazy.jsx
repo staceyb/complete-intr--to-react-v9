@@ -14,7 +14,7 @@ function ContactRoute() {
       return postContact(
         formData.get("name"),
         formData.get("email"),
-        formData.get("message")
+        formData.get("message"),
       );
     },
   });
@@ -26,13 +26,15 @@ function ContactRoute() {
         <h3>Submitted!</h3>
       ) : (
         <>
-        <p className={mutation.isError ? "formerror" : "hidden"}>All fields are required.</p>
-        <form onSubmit={mutation.mutate}>
-          <input name="name" placeholder="Name" />
-          <input type="email" name="email" placeholder="Email" />
-          <textarea placeholder="Message" name="message"></textarea>
-          <button>Submit</button>
-        </form>
+          <p className={mutation.isError ? "formerror" : "hidden"}>
+            All fields are required.
+          </p>
+          <form onSubmit={mutation.mutate}>
+            <input name="name" placeholder="Name" />
+            <input type="email" name="email" placeholder="Email" />
+            <textarea placeholder="Message" name="message"></textarea>
+            <button>Submit</button>
+          </form>
         </>
       )}
     </div>
