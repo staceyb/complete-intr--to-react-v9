@@ -11,7 +11,10 @@ export default function Header() {
       </Link>
       <div className="nav-cart">
         <Link to="/order">
-          🛒<span className="nav-cart-number" data-testid="cart-number">{ cart.length }</span>
+          🛒
+          <span className="nav-cart-number" data-testid="cart-number">
+            { cart.length }
+          </span>
         </Link>
       </div>
     </nav>
