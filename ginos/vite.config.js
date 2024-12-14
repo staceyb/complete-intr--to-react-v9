@@ -7,17 +7,20 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: "http://localhost:3001",
         changeOrigin: true,
       },
       "/public": {
-        target: "http://localhost:3000",
+        target: "http://localhost:3001",
         changeOrigin: true,
       },
     },
   },
-  coverage: {
-    reporter: ["text", "json", "html"],
-  },
   plugins: [TanStackRouterVite(), react()],
+  test: {
+    environment: "happy-dom",
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
+  },
 });
