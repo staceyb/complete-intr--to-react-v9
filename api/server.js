@@ -12,7 +12,7 @@ const server = fastify({
   },
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -210,7 +210,7 @@ server.post("/api/order", async function createOrder(req, res) {
 });
 
 server.get("/api/past-orders", async function getPastOrders(req, res) {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  //await new Promise((resolve) => setTimeout(resolve, 5000));
   try {
     const page = parseInt(req.query.page, 10) || 1;
     const limit = 20;
